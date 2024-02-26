@@ -5,7 +5,7 @@ const hashingOptions = {
   type: argon2.argon2d,
   memoryCost: 19 * 2 ** 10,
   timeCost: 2,
-  parallilism: 1,
+  parallelism: 1,
 };
 
 const hashPassword = async (req, res, next) => {
