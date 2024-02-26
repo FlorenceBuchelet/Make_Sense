@@ -2,19 +2,10 @@ const express = require("express");
 
 const router = express.Router();
 
-/* ************************************************************************* */
-/* Upload pictures with multer */
-
-/* ************************************************************************* */
-// Define Your API Routes Here
-/* ************************************************************************* */
-const userControllers = require("./controllers/userControllers");
-const { upload } = require("./services/uploadMiddleware");
-// Upload image
-router.put("/picture/user/:id", upload, userControllers.updatePicture);
-
 // hashing password middleware
 const { hashPassword } = require("./services/auth");
+// Upload image middleware
+const { upload } = require("./services/uploadMiddleware");
 
 // LOGIN
 const authControllers = require("./controllers/authControllers");
@@ -23,6 +14,7 @@ router.post("/login", authControllers.login);
 
 // USER ROUTES
 // Import Controller
+const userControllers = require("./controllers/userControllers");
 // Route to get a list of users
 router.get("/user", userControllers.browse);
 // Route to get a specific user by ID
@@ -32,6 +24,7 @@ router.get("/user/role/:id", userControllers.readByRole);
 // Route to add a new user
 router.post("/user/create", hashPassword, userControllers.add);
 // Route to update a user's picture
+router.put("/picture/user/:id", upload, userControllers.updatePicture);
 
 // DECISION ROUTES
 // Import Controller
@@ -50,7 +43,7 @@ router.get("/decision/current", decisionControllers.getCurrentDecisions);
 router.get("/decisions/:id/experts", decisionControllers.getExperts);
 // get impacted
 router.get("/decisions/:id/impacted", decisionControllers.getImpacted);
-// filter decisions linked to a user
+// filter decisions related to a user
 router.get(
   "/user/:id/related-decisions",
   decisionControllers.getRelatedDecisions
@@ -59,7 +52,7 @@ router.get(
 router.post("/decision/create", decisionControllers.createDecision);
 // Route to update decision
 router.post("/decision/update", decisionControllers.updateDecision);
-// delete decision for admin
+// delete decision (admin only)
 router.delete(
   "/decision/delete/:decisionId/users/:userId",
   decisionControllers.deleteDecision
@@ -93,7 +86,5 @@ router.post("/decision/create", decisionControllers.createDecision);
 router.put("/decision/update", decisionControllers.updateDecision);
 // Route to retrieve a complete posted decision by ID
 router.get("/decision/:id", decisionControllers.read);
-
-/* ************************************************************************* */
 
 module.exports = router;
