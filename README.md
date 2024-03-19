@@ -1,36 +1,24 @@
 ## Concept
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying a pedagogical tool.
+This project is the result of 8 weeks of hard work of 4 students developers for the french association Make Sense. It's an online platform reserved to Make Sense's employees so they can share ideas to improve the organization in any way. 
 
 ## Setup & Use
 
-### Windows users
-
-Be sure to run these commands in a git terminal to avoid [issues with newline formats](https://en.wikipedia.org/wiki/Newline#Issues_with_different_newline_formats):
-
-```
-git config --global core.eol lf
-git config --global core.autocrlf false
-```
-
 ### Project Initialization
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
 - Clone this repo, enter it
 - Run command `npm install`
-- Create environment files (`.env`) in both `backend` and `frontend`: you can copy `.env.sample` files as starters (**don't** delete them)
+- Create environment files (`.env`) in both `backend` and `frontend`: you can copy `.env.sample` files as starters
 
 ### Available Commands
 
-- `db:migrate` : Run the database migration script
-- `db:seed` : Run the database seed script
 - `dev` : Starts both servers (frontend + backend) in one terminal
 - `dev-front` : Starts the React frontend server
 - `dev-back` : Starts the Express backend server
 - `lint` : Runs validation tools (will be executed on every _commit_, and refuse unclean code)
 
-## FAQ
+
+# TEMPLATE FAQ
 
 ### Tools
 
@@ -67,7 +55,7 @@ Your url will be ` https://${PROJECT-NAME}.${subdomain}.wilders.dev/`.
 
 ### About the database
 
-The database is automaticaly deployed with the name of your repo. During the build of the projet (`docker-entry.sh`), the `node migrate.js` command is executed in the backend. If you want to seed automaticaly your database using the `seed.js` script, replace the command _build_ on you `backend/package.json` by `node migrate.js && node seed.js`.
+The database is automaticaly deployed with the name of the repo. During the build of the projet (`docker-entry.sh`), the `node migrate.js` command is executed in the backend. If you want to seed automaticaly your database using the `seed.js` script, replace the command _build_ on you `backend/package.json` by `node migrate.js && node seed.js`.
 
 ### About public assets (pictures, fonts...)
 
