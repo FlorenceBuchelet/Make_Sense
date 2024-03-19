@@ -1,3 +1,5 @@
+# For the template
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
