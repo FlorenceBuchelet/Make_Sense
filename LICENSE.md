@@ -1,3 +1,5 @@
+# For the template
+
 Copyright (c) 2022 Wild Code School
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
