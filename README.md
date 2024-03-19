@@ -1,3 +1,5 @@
+# MAKE SENSE
+
 ## Concept
 
 This project is the result of 8 weeks of hard work of 4 students developers for the french association Make Sense. It's an online platform reserved to Make Sense's employees so they can share ideas to improve the organization in any way. 
@@ -9,6 +11,7 @@ This project is the result of 8 weeks of hard work of 4 students developers for 
 - Clone this repo, enter it
 - Run command `npm install`
 - Create environment files (`.env`) in both `backend` and `frontend`: you can copy `.env.sample` files as starters
+- Run `npm run dev` in your terminal
 
 ### Available Commands
 
